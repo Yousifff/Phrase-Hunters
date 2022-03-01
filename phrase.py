@@ -1,8 +1,4 @@
 # Create your Phrase class logic here.
-
-
-
-
 class Phrase:
     def __init__(self,phrases) -> None:
         self.phrases = phrases
@@ -15,7 +11,9 @@ class Phrase:
             if letter in guesses:
                 print(letter,end=" ")
             else:
-                print("_",end=" ")
+                print("_",end=" ")  
+        
+    
                 
     def check_phrase(self,guess):
         if guess not in self.phrases:
