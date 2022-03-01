@@ -10,9 +10,12 @@ class Phrase:
         for letter in self.phrases:
             if letter in guesses:
                 print(letter,end=" ")
+            elif letter == " ":
+                print(" ",end=" ")
             else:
                 print("_",end=" ")  
         
+        print()
     
                 
     def check_phrase(self,guess):

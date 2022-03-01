@@ -32,7 +32,7 @@ class Game:
         self.active_phrase = self.get_random_phrase()
         
     def get_guess(self):
-        get_letter = input("Enter a character : ").lower()
+        get_letter = input("\nEnter a character : ").lower()
         if len(get_letter) > 1:
             raise Exception("one character is allowed!\n")
         
@@ -53,6 +53,8 @@ class Game:
         while True:
            
             self.welcome()
+            print(f'Number Missed: {self.missed}')
+            self.active_phrase.display(self.guesses)
             try:
                 user_guess = self.get_guess()
                 self.guesses.append(user_guess)
@@ -63,11 +65,12 @@ class Game:
            
        
             
-         
-            self.active_phrase.display(self.guesses)
+            
+            
             if not self.active_phrase.check_phrase(user_guess):
                 self.missed = self.missed + 1
-            print(f'\n\nNumber Missed: {self.missed}')
+            
+            
             if self.game_over():
                 get_input = input("Would you like to start a new game?(y,n) : ")
                 if get_input.lower() == 'y':
